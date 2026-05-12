@@ -9,14 +9,10 @@ class Solution {
 
     private void backtrack(List<String> result, String current, int open, int close, int n) {
 
-        // If the current string length becomes 2*n,
-        // it means we used all parentheses
         if (current.length() == 2 * n) {
             result.add(current);
             return;
         }
-
-        // Add opening bracket if we still have some left
         if (open < n) {
             backtrack(result, current + "(", open + 1, close, n);
         }
